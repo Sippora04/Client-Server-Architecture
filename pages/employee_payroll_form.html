@@ -7,14 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/payroll_form_style.css">
     <title>Employee Payroll Form</title>
-    <!-- <script defer src="../jsp/EmployeePayroll.js"></script> -->
-    <!-- The defer attribute tells the browser not to wait for the script.
-         Instead, the browser will continue to process the HTML, build DOM.
-         The script loads “in the background”, and then runs when the DOM is fully built.-->
     <script defer src="../js/payroll_form.js"></script>
-    <script defer src="../js/EmployeePayroll.js"></script>
     <script src="../js/utility.js"></script>
     <script src="../js/site_properties.js"></script>
+    <script src="../js/http_services.js"></script>
 </head>
 
 <body>
@@ -40,16 +36,6 @@
                 <label class="label text" for="profile">Profile Image</label>
                 <div class="profile-radio-content">
                     <label>
-                        <input type="radio" id="profile6" name="profile" value="../assets/profile-images/Ellipse -1.png"
-                            required>
-                        <img class="profile" id="image6" src="../assets/profile-images/Ellipse -1.png">
-                    </label>
-                    <label>
-                        <input type="radio" id="profile5" name="profile" value="../assets/profile-images/Ellipse -2.png"
-                            required>
-                        <img class="profile" id="image5" src="../assets/profile-images/Ellipse -2.png">
-                    </label>
-                    <label>
                         <input type="radio" id="profile1" name="profile" value="../assets/profile-images/Ellipse -3.png"
                             required>
                         <img class="profile" id="image1" src="../assets/profile-images/Ellipse -3.png">
@@ -68,6 +54,16 @@
                         <input type="radio" id="profile4" name="profile" value="../assets/profile-images/Ellipse -7.png"
                             required>
                         <img class="profile" id="image4" src="../assets/profile-images/Ellipse -7.png">
+                    </label>
+                    <label>
+                        <input type="radio" id="profile5" name="profile" value="../assets/profile-images/Ellipse -2.png"
+                            required>
+                        <img class="profile" id="image5" src="../assets/profile-images/Ellipse -2.png">
+                    </label>
+                    <label>
+                        <input type="radio" id="profile6" name="profile" value="../assets/profile-images/Ellipse -1.png"
+                            required>
+                        <img class="profile" id="image6" src="../assets/profile-images/Ellipse -1.png">
                     </label>
                 </div>
             </div>
@@ -178,7 +174,7 @@
             </div>
             <div class="row-content">
                 <label class="label text" for="notes">Notes</label>
-                <textarea class="input" id="notes" name="Notes" placeholder=" " style="height:100px"></textarea>
+                <textarea class="input" id="notes" name="Notes" placeholder="" style="height:100px"></textarea>
             </div>
             <div class="buttonParent">
                 <a href="./home.html" class="resetButton button cancelButton">Cancel</a>
