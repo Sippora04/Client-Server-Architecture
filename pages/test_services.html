@@ -28,49 +28,32 @@
     <div id="delete_services"></div>
     <div id="post_services"></div>
     <script>
-        const getElem = document.querySelector("#get_services");
+        const getElement = document.querySelector('#get_services');
         const getURL = "http://127.0.0.1:3000/EmployeePayrollDB/1";
         makeServiceCall("GET", getURL, true)
-            .then(responseText => {
-                getElem.textContent = "Get User Data: " + responseText;
-            })
-            .catch(error => {
-                getElem.textContent = "GET Error Status: " + JSON.stringify(error);
-            });
+            .then(responseText => getElement.textContent = "Get User Data: " + responseText)
+            .catch(error => getElement.textContent = "GET Error Status: " + JSON.stringify(error));
 
-        const deleteElem = document.querySelector("#delete_services");
-        const deleteURL = "http://127.0.0.1:3000/EmployeePayrollDB/3";
+        const deleteElement = document.querySelector('#delete_services');
+        const deleteURL = "http://127.0.0.1:3000/EmployeePayrollDB/5";
         makeServiceCall("DELETE", deleteURL, false)
-            .then(responseText => {
-                deleteElem.textContent = "Delete Data: " + responseText;
-            })
-            .catch(error => {
-                deleteElem.textContent = "DELETE Error Status: " + JSON.stringify(error);
-            });
+            .then(responseText => deleteElement.textContent = "User Deleted: " + responseText)
+            .catch(error => deleteElement.textContent = "DELETE Error Status: " + JSON.stringify(error));
 
-        const employeePayrollData =
-        {
-            "_name": "Amarpa Shashanka Keerthi Kumar",
-            "_gender": "female",
-            "_department": [
-                "Sales"
-            ],
-            "_salary": "400000",
-            "_startDate": "29 Oct 2019",
-            "_note": "",
-            "_profilePic": "../assets/profile-images/Ellipse -1.png",
-            "id": 3
-        };
-
-        const postElem = document.querySelector("#post_services");
+        const postElement = document.querySelector('#post_services');
         const postURL = "http://127.0.0.1:3000/EmployeePayrollDB";
-        makeServiceCall("POST", postURL, true, employeePayrollData)
-            .then(responseText => {
-                postElem.textContent = "New user Data: " + responseText;
-            })
-            .catch(error => {
-                postElem.textContent = "POST Error Status: " + JSON.stringify(error);
-            });
+        const employeeData = {
+            "_name": "Akash Malya",
+            "_gender": "male",
+            "_profilePicture": "../assets/profile-images/Ellipse -3.png",
+            "_salary": "350000",
+            "_startDate": "2020-11-14T18:30:00.000Z",
+            "_note": "New employee",
+            "_departments": ["Sales", "Finance"]
+        };
+        makeServiceCall("POST", postURL, true, employeeData)
+            .then(responseText => postElement.textContent = "User Added : " + responseText)
+            .catch(error => postElement.textContent = "POST Error Status : " + JSON.stringify(error));
     </script>
 </body>
 

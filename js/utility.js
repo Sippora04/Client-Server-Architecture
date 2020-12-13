@@ -5,10 +5,10 @@ const stringifyDate = (date) => {
 }
 
 const checkName = (name) => {
-    const NAME_REGEX = RegExp("^[A-Z]{1}[a-zA-Z\\s]{2,}$");
+    const NAME_REGEX = RegExp("^[A-Z]{1}[a-z]{2,}([ ][A-Z]{1}[a-z]{2,})?$");
     if (NAME_REGEX.test(name)) {
         this._name = name;
-    } else throw "Name is incorrect.";
+    } else throw "Name is Incorrect!";
 };
 
 const checkStartDate = (startDate) => {
